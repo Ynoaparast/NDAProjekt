@@ -32,8 +32,7 @@ public class dbCustomer {
 			cusObj.setAddress(rs.getString("address"));
 			cusObj.setPhone(rs.getString("phone"));
 			con.close();
-			stmt.close();
-			
+			stmt.close();	
 		}
 		catch(Exception e){
 			e.printStackTrace();
