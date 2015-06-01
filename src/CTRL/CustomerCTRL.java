@@ -1,6 +1,5 @@
 package CTRL;
 
-import DB.dbConnection;
 import DB.dbCustomer;
 import Model.Customer;
 

@@ -22,6 +22,7 @@ public class dbCustomer {
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 			
+			cusObj.setID(rs.getInt("ID"));
 			cusObj.setFirstName(rs.getString("firstName"));
 			cusObj.setLastName(rs.getString("lastName"));
 			cusObj.setPhone(rs.getString("phone"));
