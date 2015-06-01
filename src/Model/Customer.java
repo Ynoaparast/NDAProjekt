@@ -1,14 +1,14 @@
 package Model;
 
 public class Customer {
-
+	
 	private String firstName, lastName, phone, email, country, city, zipCode, address,
 	previousDogs, ref, eanNumber, gardenDescription, kids, animals, accommodation;
 	
 	public Customer(){
 		
 	}
-
+	
 	public String getFirstName() {
 		return firstName;
 	}
