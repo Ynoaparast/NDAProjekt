@@ -261,7 +261,9 @@ public class CustomerGui {
 	}
 	
 	public static void createCustomer(java.awt.event.ActionEvent e){
+		
 		CustomerCTRL cusCtrl = new CustomerCTRL();
+		
 		String firstname = txtFirstname.getText();
 		String lastname = txtLastname.getText();
 		String phone = txtPhone.getText();
@@ -287,6 +289,6 @@ public class CustomerGui {
 	
 	public static void selectByPhone(String phone){
 		CustomerCTRL ctrlCus = new CustomerCTRL();
-		ctrlCus.selectByPhone(phone);
+		ctrlCus.findByPhone(phone);
 	}
 }

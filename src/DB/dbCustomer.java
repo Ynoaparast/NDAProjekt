@@ -52,27 +52,65 @@ public class dbCustomer {
 		return cusObj;
 	}
 	
-	public void insertCustomer(Customer cus) throws Exception
+	public void insertCustomer(String firstName, String lastName, String phone, String email, String country, String city, String zipCode, String address, 
+			String previousDogs, String  ref, String  eanNumber, String  gardenDescription, String  kids, String  animals, String  accommodation) throws Exception
 	 {
-		   String query="INSERT INTO Customer(firstName, lastName, phone, email, country, city, zipCode, address, previousDogs, ref, eanNumber, gardenDescription, kids, animals, accommodation)  VALUES('"+
-				cus.getFirstName()  + "','"  +
-				cus.getLastName()  + "','"  +
-				cus.getPhone() + "','"  +
-				cus.getEmail() + "','"  +
-				cus.getCountry() + "','"  +
-				cus.getCity() + "','"  +
-				cus.getZipCode() + "','"  +
-				cus.getAddress() + "','"  +
-				cus.getPreviousDogs() + "','"  +
-				cus.getRef() + "','"  +
-				cus.getEanNumber() + "','"  +
-				cus.getGardenDescription() + "','"  +
-				cus.getKids() + "','"  +
-				cus.getAnimals() + "','"+
-				cus.getAccommodation() + "')";
-	                     
+		   
+//		Customer cus = new Customer();
+//		
+//		cus.setFirstName(firstName);
+//		cus.setLastName(lastName);
+//		cus.setPhone(phone);
+//		cus.setEmail(email);
+//		cus.setCountry(country);
+//		cus.setCity(city);
+//		cus.setZipCode(zipCode);
+//		cus.setAddress(address);
+//		cus.setPreviousDogs(previousDogs);
+//		cus.setRef(ref);
+//		cus.setEanNumber(eanNumber);
+//		cus.setGardenDescription(gardenDescription);
+//		cus.setKids(kids);
+//		cus.setAnimals(animals);
+//		cus.setAccommodation(accommodation);
+		
+		String query="INSERT INTO Customer(firstName, lastName, phone, email, country, city, zipCode, address, previousDogs, ref, eanNumber, gardenDescription, kids, animals, accommodation)  VALUES('"+
+				firstName  + "','"  +
+				lastName  + "','"  +
+				phone + "','"  +
+				email + "','"  +
+				country + "','"  +
+				city + "','"  +
+				zipCode + "','"  +
+				address + "','"  +
+				previousDogs + "','"  +
+				ref + "','"  +
+				eanNumber+ "','"  +
+				gardenDescription + "','"  +
+				kids + "','"  +
+				animals + "','"+
+				accommodation + "')";
+	            
+		
+//		cus.getFirstName()  + "','"  +
+//		cus.getLastName()  + "','"  +
+//		cus.getPhone() + "','"  +
+//		cus.getEmail() + "','"  +
+//		cus.getCountry() + "','"  +
+//		cus.getCity() + "','"  +
+//		cus.getZipCode() + "','"  +
+//		cus.getAddress() + "','"  +
+//		cus.getPreviousDogs() + "','"  +
+//		cus.getRef() + "','"  +
+//		cus.getEanNumber() + "','"  +
+//		cus.getGardenDescription() + "','"  +
+//		cus.getKids() + "','"  +
+//		cus.getAnimals() + "','"+
+//		cus.getAccommodation() + "')";
+        
 
 	       System.out.println("insert : " + query);
+	       
 	      try{ // insert new employee +  dependent
 	          Statement stmt = con.createStatement();
 	          stmt.setQueryTimeout(5);
