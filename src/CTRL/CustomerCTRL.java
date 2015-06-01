@@ -6,7 +6,7 @@ import DB.dbConnection;
 import DB.dbCustomer;
 import Model.Customer;
 
-public class CtrlCustomer {
+public class CustomerCTRL {
 	public void selectByPhone(String phone){
 		dbCustomer dbCus = new dbCustomer();
 		dbCus.getByPhone(phone);

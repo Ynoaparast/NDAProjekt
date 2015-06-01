@@ -10,10 +10,13 @@ import java.util.ArrayList;
 import Model.Customer;
 
 public class dbCustomer {
+	
 	private Connection con;
+	
 	public dbCustomer(){
 		con = dbConnection.getInstance().getDBcon();
 	}
+	
 	public void getAllCustomers() throws SQLException{
 		
 		try{
@@ -50,6 +53,7 @@ public class dbCustomer {
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 			ArrayList<Customer> cusByPhone = new ArrayList<Customer>();
+			
 			while(rs.next()){
 				Customer cusObj = new Customer();
 				cusObj.setFirstName(rs.getString("firstName"));

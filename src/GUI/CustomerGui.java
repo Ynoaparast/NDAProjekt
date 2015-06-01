@@ -261,7 +261,7 @@ public class CustomerGui {
 	}
 	
 	public static void createCustomer(java.awt.event.ActionEvent e){
-		CtrlCustomer cusCtrl = new CtrlCustomer();
+		CustomerCTRL cusCtrl = new CustomerCTRL();
 		String firstname = txtFirstname.getText();
 		String lastname = txtLastname.getText();
 		String phone = txtPhone.getText();
@@ -286,12 +286,12 @@ public class CustomerGui {
 	}
 	
 	public static void selectByPhone(String phone){
-		CtrlCustomer ctrlCus = new CtrlCustomer();
+		CustomerCTRL ctrlCus = new CustomerCTRL();
 		ctrlCus.selectByPhone(phone);
 	}
 	
 	public static void getAllCustomers() throws SQLException{
-		CtrlCustomer ctrlCus = new CtrlCustomer();
+		CustomerCTRL ctrlCus = new CustomerCTRL();
 		ctrlCus.getAllCustomers();
 	}
 }
