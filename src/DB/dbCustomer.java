@@ -1,12 +1,9 @@
 package DB;
 
-import java.beans.Expression;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-
 import Model.Customer;
 
 public class dbCustomer {
@@ -17,8 +14,6 @@ public class dbCustomer {
 		con = dbConnection.getInstance().getDBcon();
 	}
 	
-	
-
 	public Customer getByPhone(String phone){
 		Customer cusObj = new Customer();
 		try{

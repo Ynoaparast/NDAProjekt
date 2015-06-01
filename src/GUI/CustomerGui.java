@@ -287,6 +287,6 @@ public class CustomerGui {
 	
 	public static void selectByPhone(String phone){
 		CustomerCTRL ctrlCus = new CustomerCTRL();
-		ctrlCus.selectByPhone(phone);
+		ctrlCus.findByPhone(phone);
 	}
 }
