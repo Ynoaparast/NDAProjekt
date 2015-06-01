@@ -17,61 +17,27 @@ public class dbCustomer {
 		con = dbConnection.getInstance().getDBcon();
 	}
 	
-	public void getAllCustomers() throws SQLException{
-		
-		try{
-			String query="Select * from Customer";
-			Connection con = dbConnection.getInstance().getDBcon();
-			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery(query);
-			ArrayList<Customer> arrayCus = new ArrayList<Customer>();
-			
-			while(rs.next()){
-				Customer cusObj = new Customer();
-				cusObj.setFirstName(rs.getString("firstName"));
-				cusObj.setLastName(rs.getString("lastName"));
-				arrayCus.add(cusObj);
-			}
-			con.close();
-			stmt.close();
-			for(int i = 0; i < arrayCus.size(); i++){
-				System.out.println(arrayCus.get(i).getFirstName());	
-			}
-			
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		//return getCustomer();
-	}
 	
-	
-	public Customer getByPhone(String phone){
+
+	public void getByPhone(String phone){
 		try{
 			String query = "Select top 1 * from customer where phone ='"+ phone + "'order by ID desc";
 			Connection con = dbConnection.getInstance().getDBcon();
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
-			ArrayList<Customer> cusByPhone = new ArrayList<Customer>();
-			
-			while(rs.next()){
-				Customer cusObj = new Customer();
-				cusObj.setFirstName(rs.getString("firstName"));
-				cusObj.setLastName(rs.getString("lastName"));
-				cusObj.setAddress(rs.getString("address"));
-				cusObj.setPhone(rs.getString("phone"));
-				cusByPhone.add(cusObj);
-			}
+
+			Customer cusObj = new Customer();
+			cusObj.setFirstName(rs.getString("firstName"));
+			cusObj.setLastName(rs.getString("lastName"));
+			cusObj.setAddress(rs.getString("address"));
+			cusObj.setPhone(rs.getString("phone"));
 			con.close();
 			stmt.close();
-			for(int i = 0; i < cusByPhone.size(); i++){
-				System.out.println(cusByPhone.get(i).getFirstName());	
-			}
+			
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		return cusObj;
 	}
 	
 	public void insertCustomer(Customer cus) throws Exception
