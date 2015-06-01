@@ -19,24 +19,38 @@ public class dbCustomer {
 	
 	
 
-	public void getByPhone(String phone){
+	public Customer getByPhone(String phone){
+		Customer cusObj = new Customer();
 		try{
 			String query = "Select top 1 * from customer where phone ='"+ phone + "'order by ID desc";
 			Connection con = dbConnection.getInstance().getDBcon();
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 
-			Customer cusObj = new Customer();
+			
 			cusObj.setFirstName(rs.getString("firstName"));
 			cusObj.setLastName(rs.getString("lastName"));
-			cusObj.setAddress(rs.getString("address"));
 			cusObj.setPhone(rs.getString("phone"));
+			cusObj.setEmail(rs.getString("email"));
+			cusObj.setCountry(rs.getString("country"));
+			cusObj.setCity(rs.getString("city"));
+			cusObj.setZipCode(rs.getString("zipCode"));		
+			cusObj.setAddress(rs.getString("address"));
+			cusObj.setPreviousDogs(rs.getString("previousDogs"));
+			cusObj.setRef(rs.getString("ref"));
+			cusObj.setEanNumber(rs.getString("eanNumber"));			
+			cusObj.setGardenDescription(rs.getString("gardenDescription"));
+			cusObj.setKids(rs.getString("kids"));
+			cusObj.setAnimals(rs.getString("animals"));
+			cusObj.setAccommodation(rs.getString("accommodation"));
+			
 			con.close();
 			stmt.close();	
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
+		return cusObj;
 	}
 	
 	public void insertCustomer(Customer cus) throws Exception

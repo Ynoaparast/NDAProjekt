@@ -1,21 +1,16 @@
 package CTRL;
 
-import java.sql.SQLException;
-
 import DB.dbConnection;
 import DB.dbCustomer;
 import Model.Customer;
 
 public class CustomerCTRL {
+	
 	public void selectByPhone(String phone){
 		dbCustomer dbCus = new dbCustomer();
 		dbCus.getByPhone(phone);
 	}
 	
-	public void getAllCustomers() throws SQLException{
-		dbCustomer dbCus = new dbCustomer();
-		dbCus.getAllCustomers();
-	}
 	
 	public void CreateCustomer(String firstName, String lastName, String phone, String email, String country, String city, String zipCode, String address, 
 			String previousDogs, String  ref, String  eanNumber, String  gardenDescription, String  kids, String  animals, String  accommodation) throws Exception{
