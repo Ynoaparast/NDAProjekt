@@ -289,9 +289,4 @@ public class CustomerGui {
 		CustomerCTRL ctrlCus = new CustomerCTRL();
 		ctrlCus.selectByPhone(phone);
 	}
-	
-	public static void getAllCustomers() throws SQLException{
-		CustomerCTRL ctrlCus = new CustomerCTRL();
-		ctrlCus.getAllCustomers();
-	}
 }

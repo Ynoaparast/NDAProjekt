@@ -26,7 +26,6 @@ public class dbCustomer {
 			Connection con = dbConnection.getInstance().getDBcon();
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
-
 			
 			cusObj.setFirstName(rs.getString("firstName"));
 			cusObj.setLastName(rs.getString("lastName"));
