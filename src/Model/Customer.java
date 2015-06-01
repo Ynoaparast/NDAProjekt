@@ -1,8 +1,12 @@
 package Model;
 
 public class Customer {
+<<<<<<< HEAD
 
 	private int ID;
+=======
+	
+>>>>>>> origin/master
 	private String firstName, lastName, phone, email, country, city, zipCode, address,
 	previousDogs, ref, eanNumber, gardenDescription, kids, animals, accommodation;
 	
@@ -10,6 +14,7 @@ public class Customer {
 		
 	}
 	
+<<<<<<< HEAD
 	public int getID() {
 		return ID;
 	}
@@ -18,6 +23,8 @@ public class Customer {
 		ID = iD;
 	}
 
+=======
+>>>>>>> origin/master
 	public String getFirstName() {
 		return firstName;
 	}

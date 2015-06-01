@@ -1,31 +1,15 @@
 package GUI;
 
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-import CTRL.*;
-import DB.dbCustomer;
-import Model.Customer;
-
-import java.awt.BorderLayout;
-import java.sql.SQLException;
-
-import javax.swing.JMenuBar;
-
 import java.awt.Font;
 
-import javax.swing.JTextField;
-import javax.swing.JList;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenuBar;
+import javax.swing.JTextField;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-import javax.swing.JMenuItem;
-
-import java.awt.Button;
+import CTRL.CustomerCTRL;
 
 public class CustomerGui {
 
@@ -184,7 +168,7 @@ public class CustomerGui {
 		JButton btnNewButton_1 = new JButton("Find customer");
 		btnNewButton_1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				selectByPhone(txtSearch.getText());
+				findCustomer(txtSearch.getText());
 			}
 		});
 		btnNewButton_1.setBounds(698, 22, 146, 20);
@@ -280,15 +264,15 @@ public class CustomerGui {
 		String animals = txtOtherAnimals.getText();
 		String accommodation = "accommodation";
 		try{
-			cusCtrl.CreateCustomer(firstname, lastname, phone, email, country, city, zipCode, address, prevDogs, ref, eanNumber, gardenDescr, kids, animals, accommodation);
+			cusCtrl.createCustomer(firstname, lastname, phone, email, country, city, zipCode, address, prevDogs, ref, eanNumber, gardenDescr, kids, animals, accommodation);
 		}
 		catch(Exception evt){
 			evt.printStackTrace();
 		}
 	}
 	
-	public static void selectByPhone(String phone){
+	public static void findCustomer(String phone){
 		CustomerCTRL ctrlCus = new CustomerCTRL();
-		ctrlCus.findByPhone(phone);
+		ctrlCus.findCustomer(phone);
 	}
 }
