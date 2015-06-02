@@ -178,6 +178,7 @@ public class DogGUI {
 		int id = c.getID();
 		
 		DogCTRL DCtrl = new DogCTRL();
+		
 		String name = txtName.getText();
 		String age = txtAge.getText();
 		String gender = txtGender.getText(); 
