@@ -18,7 +18,7 @@ public class dbCustomer {
 		Customer cusObj = new Customer();
 		try{
 			String query = "Select top 1 * from customer where phone ='"+ phone + "'order by ID desc";
-			Connection con = dbConnection.getInstance().getDBcon();
+			//Connection con = dbConnection.getInstance().getDBcon();
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 			
@@ -41,8 +41,8 @@ public class dbCustomer {
 			cusObj.setAnimals(rs.getString("animals"));
 			cusObj.setAccommodation(rs.getString("accommodation"));
 			
-			con.close();
-			stmt.close();	
+//			con.close();
+//			stmt.close();	
 		}
 		catch(Exception e){
 			e.printStackTrace();

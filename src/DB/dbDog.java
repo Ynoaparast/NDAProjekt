@@ -1,7 +1,6 @@
 package DB;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 public class dbDog {
@@ -14,10 +13,10 @@ public class dbDog {
 	
 	
 public void insertDog(String name, String age, String gender, String race, String vet, String injuries, String illness,
-		String maturity, String heat, String pseudopregnancy, String castrated, String relatives, String arrival, String previousHomes, int CustomerID) throws Exception
+		String maturity, String heat, String psudopregnancy, String castrated, String relatives, String arrival, String previousHomes, int CustomerID) throws Exception
 {
 		
-	String query="INSERT INTO Dog(name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID) VALUES('"+
+	String query="INSERT INTO Dog(name, age, gender, race, vet, injuries, illness, maturity, heat, psudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID) VALUES('"+
 			name  + "','" +
 			age  + "','" +
 			gender + "','" +
@@ -27,7 +26,7 @@ public void insertDog(String name, String age, String gender, String race, Strin
 			illness + "','"  +
 			maturity + "','"  +
 			heat + "','" +
-			pseudopregnancy + "','" +
+			psudopregnancy + "','" +
 			castrated+ "','" +
 			relatives + "','" +
 			arrival + "','" +

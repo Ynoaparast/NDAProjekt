@@ -2,141 +2,142 @@ package Model;
 
 public class Dog {
 	
-	private static int ID;
-	private static String name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes;
-	private static int CustomerID;
+	private int ID;
+	private String name, age, gender, race, vet, injuries, illness, maturity, heat, psudopregnancy, castrated, relatives, arrival, previousHomes;
+	private int CustomerID;
 	
 	public Dog(){
 		
 	}
 
-	public static int getID() {
+	public int getID() {
 		return ID;
 	}
 
-	public static void setID(int iD) {
+	public void setID(int iD) {
 		ID = iD;
 	}
 
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 
-	public static void setName(String name) {
-		Dog.name = name;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public static String getAge() {
+	public String getAge() {
 		return age;
 	}
 
-	public static void setAge(String age) {
-		Dog.age = age;
+	public void setAge(String age) {
+		this.age = age;
 	}
 
-	public static String getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public static void setGender(String gender) {
-		Dog.gender = gender;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
-	public static String getRace() {
+	public String getRace() {
 		return race;
 	}
 
-	public static void setRace(String race) {
-		Dog.race = race;
+	public void setRace(String race) {
+		this.race = race;
 	}
 
-	public static String getVet() {
+	public String getVet() {
 		return vet;
 	}
 
-	public static void setVet(String vet) {
-		Dog.vet = vet;
+	public void setVet(String vet) {
+		this.vet = vet;
 	}
 
-	public static String getInjuries() {
+	public String getInjuries() {
 		return injuries;
 	}
 
-	public static void setInjuries(String injuries) {
-		Dog.injuries = injuries;
+	public void setInjuries(String injuries) {
+		this.injuries = injuries;
 	}
 
-	public static String getIllness() {
+	public String getIllness() {
 		return illness;
 	}
 
-	public static void setIllness(String illness) {
-		Dog.illness = illness;
+	public void setIllness(String illness) {
+		this.illness = illness;
 	}
 
-	public static String getMaturity() {
+	public String getMaturity() {
 		return maturity;
 	}
 
-	public static void setMaturity(String maturity) {
-		Dog.maturity = maturity;
+	public void setMaturity(String maturity) {
+		this.maturity = maturity;
 	}
 
-	public static String getHeat() {
+	public String getHeat() {
 		return heat;
 	}
 
-	public static void setHeat(String heat) {
-		Dog.heat = heat;
+	public void setHeat(String heat) {
+		this.heat = heat;
 	}
 
-	public static String getPseudopregnancy() {
-		return pseudopregnancy;
+	public String getPseudopregnancy() {
+		return psudopregnancy;
 	}
 
-	public static void setPseudopregnancy(String pseudopregnancy) {
-		Dog.pseudopregnancy = pseudopregnancy;
+	public void setPseudopregnancy(String psudopregnancy) {
+		this.psudopregnancy = psudopregnancy;
 	}
 
-	public static String getCastrated() {
+	public String getCastrated() {
 		return castrated;
 	}
 
-	public static void setCastrated(String castrated) {
-		Dog.castrated = castrated;
+	public void setCastrated(String castrated) {
+		this.castrated = castrated;
 	}
 
-	public static String getRelatives() {
+	public String getRelatives() {
 		return relatives;
 	}
 
-	public static void setRelatives(String relatives) {
-		Dog.relatives = relatives;
+	public void setRelatives(String relatives) {
+		this.relatives = relatives;
 	}
 
-	public static String getArrival() {
+	public String getArrival() {
 		return arrival;
 	}
 
-	public static void setArrival(String arrival) {
-		Dog.arrival = arrival;
+	public void setArrival(String arrival) {
+		this.arrival = arrival;
 	}
 
-	public static String getPreviousHomes() {
+	public String getPreviousHomes() {
 		return previousHomes;
 	}
 
-	public static void setPreviousHomes(String previousHomes) {
-		Dog.previousHomes = previousHomes;
+	public void setPreviousHomes(String previousHomes) {
+		this.previousHomes = previousHomes;
 	}
 
-	public static int getCustomerID() {
+	public int getCustomerID() {
 		return CustomerID;
 	}
 
-	public static void setCustomerID(int customerID) {
+	public void setCustomerID(int customerID) {
 		CustomerID = customerID;
 	}
+
 	
 	
 

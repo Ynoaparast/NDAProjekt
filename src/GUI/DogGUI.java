@@ -29,7 +29,7 @@ public class DogGUI {
 	private static JTextField txtIllness;
 	private static JTextField txtMaturity;
 	private static JTextField txtHeat;
-	private static JTextField txtPseudopregnancy;
+	private static JTextField txtPsudopregnancy;
 	private static JTextField txtCastrated;
 	private static JTextField txtRelatives;
 	private static JTextField txtArrival;
@@ -123,11 +123,11 @@ public class DogGUI {
 		frame.getContentPane().add(txtHeat);
 		txtHeat.setColumns(10);
 		
-		txtPseudopregnancy = new JTextField();
-		txtPseudopregnancy.setText("Pseudopregnancy");
-		txtPseudopregnancy.setBounds(40, 310, 107, 20);
-		frame.getContentPane().add(txtPseudopregnancy);
-		txtPseudopregnancy.setColumns(10);
+		txtPsudopregnancy = new JTextField();
+		txtPsudopregnancy.setText("Pseudopregnancy");
+		txtPsudopregnancy.setBounds(40, 310, 107, 20);
+		frame.getContentPane().add(txtPsudopregnancy);
+		txtPsudopregnancy.setColumns(10);
 		
 		txtCastrated = new JTextField();
 		txtCastrated.setText("Castrated");
@@ -178,7 +178,6 @@ public class DogGUI {
 		int id = c.getID();
 		
 		DogCTRL DCtrl = new DogCTRL();
-		
 		String name = txtName.getText();
 		String age = txtAge.getText();
 		String gender = txtGender.getText(); 
@@ -188,14 +187,14 @@ public class DogGUI {
 		String illness = txtIllness.getText(); 
 		String maturity = txtMaturity.getText(); 
 		String heat = txtHeat.getText(); 
-		String pseudopregnancy = txtPseudopregnancy.getText();
+		String psudopregnancy = txtPsudopregnancy.getText();
 		String castrated = txtCastrated.getText(); 
 		String relatives = txtRelatives.getText();
 		String arrival = txtArrival.getText();
 		String previousHomes = txtPrevioushomes.getText();
 		int CustomerID = id;
 		try{
-			DCtrl.CreateDog(name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID);
+			DCtrl.CreateDog(name, age, gender, race, vet, injuries, illness, maturity, heat, psudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

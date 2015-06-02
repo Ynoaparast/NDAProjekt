@@ -1,35 +1,50 @@
 package Model;
 
+import DB.dbConnection;
+
 public class Order {
 	
-	private static int ID;
-	private static String amount;
-	private static String totalPrice;
+	private int ID;
+	private String amount;
+	private String totalPrice;
+	private int CustomerID;
 	
-	public Order(){
-		
+	public int getCustomerID() {
+		return CustomerID;
 	}
-	
-	public static int getID() {
+
+	public void setCustomerID(int customerID) {
+		CustomerID = customerID;
+	}
+
+	public Order(){
+
+	}
+
+	public int getID() {
 		return ID;
 	}
 
-	public static void setID(int iD) {
+	public void setID(int iD) {
 		ID = iD;
 	}
-	
-	public static String getAmount() {
+
+	public String getAmount() {
 		return amount;
 	}
-	public static void setAmount(String amount) {
-		Order.amount = amount;
-	}
-	public static String getTotalPrice() {
-		return totalPrice;
-	}
-	public static void setTotalPrice(String totalPrice) {
-		Order.totalPrice = totalPrice;
+
+	public void setAmount(String amount) {
+		this.amount = amount;
 	}
 
+	public String getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(String totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+	
+	
 	
 }
