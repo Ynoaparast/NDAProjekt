@@ -2,6 +2,7 @@ package Model;
 
 public class Customer {
 
+
 	private int ID;
 
 	private String firstName, lastName, phone, email, country, city, zipCode, address,
@@ -15,8 +16,8 @@ public class Customer {
 		return ID;
 	}
 
-	public void setID(int id) {
-		ID = id;
+	public void setID(int iD) {
+		ID = iD;
 	}
 
 	public String getFirstName() {
