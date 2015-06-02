@@ -36,19 +36,19 @@ public class CustomerGui {
 	private static JButton btnUpdateButton;
 	private static JTextField txtSearch;
 
-	private static JTextField textField;
-	private static JTextField textField_1;
-	private static JTextField textField_2;
-	private static JTextField textField_3;
-	private static JTextField textField_4;
-	private static JTextField textField_5;
-	private static JTextField textField_6;
-	private static JTextField textField_7;
-	private static JTextField textField_8;
-	private static JTextField textField_9;
-	private static JTextField textField_10;
-	private static JTextField textField_11;
-	private static JTextField textField_12;
+	private static JTextField txtFirstname2;
+	private static JTextField txtLastname2;
+	private static JTextField txtZipcode2;
+	private static JTextField txtCity2;
+	private static JTextField txtCountry2;
+	private static JTextField txtPhone2;
+	private static JTextField txtEmail2;
+	private static JTextField txtKids2;
+	private static JTextField txtOtherAnimals2;
+	private static JTextField txtAccommodation2;
+	private static JTextField txtAddress2;
+	private static JTextField txtPrevdogs2;
+	private static JTextField textGarden2;
 	private JLabel lblLastname_1;
 	private JLabel lblAddress_1;
 	private JLabel lblZip;
@@ -194,19 +194,19 @@ public class CustomerGui {
 				
 				hiddenTextField.setText(String.valueOf(cus.getID()));
 				
-				textField.setText(cus.getFirstName());
-				textField_1.setText(cus.getLastName());
-				textField_2.setText(cus.getAddress());
-				textField_3.setText(cus.getZipCode());
-				textField_4.setText(cus.getCity());
-				textField_5.setText(cus.getCountry());
-				textField_6.setText(cus.getPhone());
-				textField_7.setText(cus.getEmail());
-				textField_8.setText(cus.getKids());
-				textField_9.setText(cus.getPreviousDogs());
-				textField_10.setText(cus.getAnimals());
-				textField_11.setText(cus.getAccommodation());
-				textField_12.setText(cus.getGardenDescription());
+				txtFirstname2.setText(cus.getFirstName());
+				txtLastname2.setText(cus.getLastName());
+				txtAddress2.setText(cus.getAddress());
+				txtZipcode2.setText(cus.getZipCode());
+				txtCity2.setText(cus.getCity());
+				txtCountry2.setText(cus.getCountry());
+				txtPhone2.setText(cus.getPhone());
+				txtEmail2.setText(cus.getEmail());
+				txtKids2.setText(cus.getKids());
+				txtPrevdogs2.setText(cus.getPreviousDogs());
+				txtOtherAnimals2.setText(cus.getAnimals());
+				txtAccommodation2.setText(cus.getAccommodation());
+				textGarden2.setText(cus.getGardenDescription());
 				
 				
 				
@@ -226,6 +226,11 @@ public class CustomerGui {
 		
 		
 		btnNewButton_2 = new JButton("Delete Customer");
+		btnNewButton_2.addActionListener( new ActionListener(){
+			public void actionPerformed(ActionEvent evt) {
+			deleteCustomer(evt);
+			}
+		});
 		btnNewButton_2.setBounds(510, 528, 157, 50);
 		frame.getContentPane().add(btnNewButton_2);
 		
@@ -242,70 +247,70 @@ public class CustomerGui {
 		txtPrevdogs.setBounds(150, 329, 133, 20);
 		frame.getContentPane().add(txtPrevdogs);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(510, 78, 133, 20);
-		frame.getContentPane().add(textField);
+		txtFirstname2 = new JTextField();
+		txtFirstname2.setColumns(10);
+		txtFirstname2.setBounds(510, 78, 133, 20);
+		frame.getContentPane().add(txtFirstname2);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(510, 109, 133, 20);
-		frame.getContentPane().add(textField_1);
+		txtLastname2 = new JTextField();
+		txtLastname2.setColumns(10);
+		txtLastname2.setBounds(510, 109, 133, 20);
+		frame.getContentPane().add(txtLastname2);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(510, 174, 60, 20);
-		frame.getContentPane().add(textField_2);
+		txtZipcode2 = new JTextField();
+		txtZipcode2.setColumns(10);
+		txtZipcode2.setBounds(510, 174, 60, 20);
+		frame.getContentPane().add(txtZipcode2);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(607, 174, 60, 20);
-		frame.getContentPane().add(textField_3);
+		txtCity2 = new JTextField();
+		txtCity2.setColumns(10);
+		txtCity2.setBounds(607, 174, 60, 20);
+		frame.getContentPane().add(txtCity2);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(510, 205, 133, 20);
-		frame.getContentPane().add(textField_4);
+		txtCountry2 = new JTextField();
+		txtCountry2.setColumns(10);
+		txtCountry2.setBounds(510, 205, 133, 20);
+		frame.getContentPane().add(txtCountry2);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(510, 236, 133, 20);
-		frame.getContentPane().add(textField_5);
+		txtPhone2 = new JTextField();
+		txtPhone2.setColumns(10);
+		txtPhone2.setBounds(510, 236, 133, 20);
+		frame.getContentPane().add(txtPhone2);
 		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(510, 267, 133, 20);
-		frame.getContentPane().add(textField_6);
+		txtEmail2 = new JTextField();
+		txtEmail2.setColumns(10);
+		txtEmail2.setBounds(510, 267, 133, 20);
+		frame.getContentPane().add(txtEmail2);
 		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(510, 298, 133, 20);
-		frame.getContentPane().add(textField_7);
+		txtKids2 = new JTextField();
+		txtKids2.setColumns(10);
+		txtKids2.setBounds(510, 298, 133, 20);
+		frame.getContentPane().add(txtKids2);
 		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(510, 360, 133, 20);
-		frame.getContentPane().add(textField_8);
+		txtOtherAnimals2 = new JTextField();
+		txtOtherAnimals2.setColumns(10);
+		txtOtherAnimals2.setBounds(510, 360, 133, 20);
+		frame.getContentPane().add(txtOtherAnimals2);
 		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(510, 391, 133, 20);
-		frame.getContentPane().add(textField_9);
+		txtAccommodation2 = new JTextField();
+		txtAccommodation2.setColumns(10);
+		txtAccommodation2.setBounds(510, 391, 133, 20);
+		frame.getContentPane().add(txtAccommodation2);
 		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		textField_10.setBounds(510, 140, 133, 20);
-		frame.getContentPane().add(textField_10);
+		txtAddress2 = new JTextField();
+		txtAddress2.setColumns(10);
+		txtAddress2.setBounds(510, 140, 133, 20);
+		frame.getContentPane().add(txtAddress2);
 		
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		textField_11.setBounds(510, 329, 133, 20);
-		frame.getContentPane().add(textField_11);
+		txtPrevdogs2 = new JTextField();
+		txtPrevdogs2.setColumns(10);
+		txtPrevdogs2.setBounds(510, 329, 133, 20);
+		frame.getContentPane().add(txtPrevdogs2);
 		
-		textField_12 = new JTextField();
-		textField_12.setColumns(10);
-		textField_12.setBounds(510, 422, 133, 20);
-		frame.getContentPane().add(textField_12);
+		textGarden2 = new JTextField();
+		textGarden2.setColumns(10);
+		textGarden2.setBounds(510, 422, 133, 20);
+		frame.getContentPane().add(textGarden2);
 		
 		JLabel lblFirstname_1 = new JLabel("Firstname");
 		lblFirstname_1.setBounds(446, 75, 54, 17);
@@ -395,25 +400,26 @@ public class CustomerGui {
 	}
 	
 	public static void updateCustomer(ActionEvent e){
+		
 		CustomerCTRL cusCtrl = new CustomerCTRL();
 	    
 		int id = Integer.parseInt(hiddenTextField.getText());
 		
-		String firstname = textField.getText();
-		String lastname = textField_1.getText();
-		String phone = textField_2.getText();
-		String email = textField_3.getText();
-		String country = textField_4.getText();
-		String city = textField_5.getText();
-		String zipCode = textField_6.getText();
-		String address = textField_7.getText();
-		String prevDogs = textField_8.getText();
+		String firstname = txtFirstname2.getText();
+		String lastname = txtLastname2.getText();
+		String phone = txtPhone2.getText();
+		String email = txtEmail2.getText();
+		String country = txtCountry2.getText();
+		String city = txtCity2.getText();
+		String zipCode = txtZipcode2.getText();
+		String address = txtAddress2.getText();
+		String prevDogs = txtPrevdogs2.getText();
 		String ref = "ref";
 		String eanNumber = "eanNumber";
-		String gardenDescr = textField_11.getText();
-		String kids = "kids";
-		String animals = textField_12.getText();
-		String accommodation = "accommodation";
+		String gardenDescr = textGarden2.getText();
+		String kids = txtKids2.getText();
+		String animals = txtOtherAnimals2.getText();
+		String accommodation = txtAccommodation2.getText();
 		
 		
 		try{
@@ -428,5 +434,12 @@ public class CustomerGui {
 		CustomerCTRL ctrlCus = new CustomerCTRL();
 		Customer cus = ctrlCus.findCustomer(phone);
 		return cus;	
+	}
+	
+	public static void deleteCustomer(ActionEvent evt){
+		int id = Integer.parseInt(hiddenTextField.getText());
+		CustomerCTRL cusCTRL = new CustomerCTRL();
+		
+		cusCTRL.deleteCustomer(id);
 	}
 }

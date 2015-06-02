@@ -43,8 +43,7 @@ public class dbCustomer {
 			cusObj.setAnimals(rs.getString("animals"));
 			cusObj.setAccommodation(rs.getString("accommodation"));
 			
-			con.close();
-			stmt.close();	
+				
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -95,15 +94,17 @@ public class dbCustomer {
 	 {
 		   
 		
-		String query= "UPDATE Customer SET firstName =" + firstName + "," + "lastName =" + lastName + "," + "phone ="+ phone + "," + "email ="+ email + "," + "country =" + country
-				+ "," + "city =" + city + "," + "zipCode ="+ zipCode+ "," + "address =" + address + "," + "previousDogs =" + previousDogs + "," + "ref =" + ref+ "," + "eanNumber ="+ eanNumber 
-				+ "," + "gardenDescription =" + gardenDescription + "," + "kids =" + kids + "," + "animals =" + animals + "," + "accommodation =" + accommodation + "WHERE ID =" + id;
+		String query= "UPDATE Customer SET firstName = '" + firstName + "'," + 
+					  "lastName = '" + lastName + "', " + "phone = '"+ phone + "', " + "email = '"+ email + "', " + "country = '" + country
+					  + "', " + "city = '" + city + "', " + "zipCode = '"+ zipCode+ "', " + "address = '" + address + "', " + "previousDogs = '" + previousDogs + "', " + "ref = '" + ref+ "', " + "eanNumber = '"+ eanNumber 
+					  + "', " + "kids = '" + kids + "', " + "animals = '" + animals + "', " + "accommodation = '" + accommodation + "', " + "gardenDescription = '" + gardenDescription + "' WHERE ID = " + id;
  		
 	            
 	
 	       System.out.println("insert : " + query);
 	       
 	      try{ 
+	    	  
 	          Statement stmt = con.createStatement();
 	          stmt.setQueryTimeout(5);
 	     	  stmt.executeUpdate(query);
@@ -115,6 +116,27 @@ public class dbCustomer {
 	       }
 	     }
 
+	public void deleteCustomer(int id) throws Exception {
+		
+		String query= "DELETE FROM Customer WHERE ID= " + id ;
 
+     System.out.println("delete : " + query);
+     
+    try{ 
+  	  
+        Statement stmt = con.createStatement();
+        stmt.setQueryTimeout(5);
+   	    stmt.executeUpdate(query);
+        stmt.close();
+    }
+     catch(SQLException ex){
+        System.out.println("Customer is not deleted");
+        throw new Exception ("Customer is not deleted");
+     }
+   }
+		
 	
 }
+
+	
+

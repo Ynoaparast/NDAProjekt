@@ -16,6 +16,7 @@ public class CustomerCTRL {
 			String previousDogs, String  ref, String  eanNumber, String  gardenDescription, String  kids, String  animals, String  accommodation) throws Exception{
 		
 		dbCustomer dbCus = new dbCustomer();
+		
 		dbCus.insertCustomer(firstName,  lastName, phone,  email, country, city, zipCode, address, 
 				previousDogs, ref,   eanNumber,  gardenDescription, kids, animals, accommodation) ;
 	}
@@ -28,8 +29,21 @@ public class CustomerCTRL {
 				previousDogs, ref, eanNumber,  gardenDescription, kids, animals, accommodation, id);
 	}
 	
+	public void deleteCustomer(int id){
+		dbCustomer dbCus = new dbCustomer();
+		
+		try{
+		dbCus.deleteCustomer(id);
+		}
+		
+		catch(Exception evt){
+			evt.printStackTrace();
+		}
+	}
 	
+	
+}
 
-	}	
+		
 
 

@@ -194,9 +194,11 @@ public class DogGUI {
 		String relatives = txtRelatives.getText();
 		String arrival = txtArrival.getText();
 		String previousHomes = txtPrevioushomes.getText();
-		int CustomerID = id;
+		
+		int customerID = id;
+		
 		try{
-			DCtrl.CreateDog(name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID);
+			DCtrl.CreateDog(name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes, customerID);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
