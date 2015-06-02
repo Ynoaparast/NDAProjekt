@@ -173,9 +173,9 @@ public class DogGUI {
 	}
 	protected void CreateDog(ActionEvent evt) {
 		
-//		CustomerCTRL cusCTRL = new CustomerCTRL();
-//		Customer c = cusCTRL.findCustomer(txtOwnerphone.getText());
-//		int id = c.getID();
+		CustomerCTRL cusCTRL = new CustomerCTRL();
+		Customer c = cusCTRL.findCustomer(txtOwnerphone.getText());
+		int id = c.getID();
 		
 		
 		DogCTRL DCtrl = new DogCTRL();

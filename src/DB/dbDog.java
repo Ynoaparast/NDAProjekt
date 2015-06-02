@@ -1,11 +1,8 @@
 package DB;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import Model.Dog;
 
 public class dbDog {
 
@@ -20,7 +17,7 @@ public void insertDog(String name, String age, String gender, String race, Strin
 		String maturity, String heat, String pseudopregnancy, String castrated, String relatives, String arrival, String previousHomes, int CustomerID) throws Exception
 {
 		
-	String query="INSERT INTO Customer(name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID) VALUES('"+
+	String query="INSERT INTO Dog(name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID) VALUES('"+
 			name  + "','" +
 			age  + "','" +
 			gender + "','" +
