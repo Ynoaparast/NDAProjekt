@@ -22,6 +22,8 @@ public class dbCustomer {
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 			
+			rs.next();
+			
 			cusObj.setID(rs.getInt("ID"));
 			cusObj.setFirstName(rs.getString("firstName"));
 			cusObj.setLastName(rs.getString("lastName"));
@@ -70,24 +72,7 @@ public class dbCustomer {
 				animals + "','"+
 				accommodation + "')";
 	            
-		
-//		cus.getFirstName()  + "','"  +
-//		cus.getLastName()  + "','"  +
-//		cus.getPhone() + "','"  +
-//		cus.getEmail() + "','"  +
-//		cus.getCountry() + "','"  +
-//		cus.getCity() + "','"  +
-//		cus.getZipCode() + "','"  +
-//		cus.getAddress() + "','"  +
-//		cus.getPreviousDogs() + "','"  +
-//		cus.getRef() + "','"  +
-//		cus.getEanNumber() + "','"  +
-//		cus.getGardenDescription() + "','"  +
-//		cus.getKids() + "','"  +
-//		cus.getAnimals() + "','"+
-//		cus.getAccommodation() + "')";
-        
-
+	
 	       System.out.println("insert : " + query);
 	       
 	      try{ // insert new employee +  dependent

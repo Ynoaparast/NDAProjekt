@@ -1,13 +1,15 @@
 package CTRL;
 
 import DB.dbCustomer;
+import Model.Customer;
 
 
 public class CustomerCTRL {
 	
-	public void findCustomer(String phone){
+	public Customer findCustomer(String phone){
 		dbCustomer dbCus = new dbCustomer();
-		dbCus.getByPhone(phone);	
+		Customer cus =dbCus.getByPhone(phone);
+		return cus;
 	}
 		
 	public void createCustomer(String firstName, String lastName, String phone, String email, String country, String city, String zipCode, String address, 
@@ -18,9 +20,9 @@ public class CustomerCTRL {
 				previousDogs, ref,   eanNumber,  gardenDescription, kids, animals, accommodation) ;
 	}
 	
-	public void updateCustomer(){
+	public void updateCustomer(int id){
 		
 	}
-	}
+	
 	
 }

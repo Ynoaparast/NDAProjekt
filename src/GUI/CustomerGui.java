@@ -10,6 +10,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JTextField;
 
 import CTRL.CustomerCTRL;
+import Model.Customer;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CustomerGui {
 
@@ -28,6 +32,8 @@ public class CustomerGui {
 	private static JTextField txtAccommodation;
 	private static JTextField txtGarden;
 	private static JButton btnNewButton;
+	private static JButton btnNewButton_2;
+	private static JButton btnUpdateButton;
 	private static JTextField txtSearch;
 	private static JLabel lblFirstname;
 	private static JLabel lblLastname;
@@ -40,9 +46,35 @@ public class CustomerGui {
 	private static JLabel lblOtherAnimals;
 	private static JLabel lblAccommodation;
 	private static JLabel lblGarden;
-	private static JButton btnNewButton_2;
+	
 	private static JLabel lblAddress;
 	private static JLabel lblPrevdog;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_8;
+	private JTextField textField_9;
+	private JTextField textField_10;
+	private JTextField textField_11;
+	private JTextField textField_12;
+	private JLabel lblLastname_1;
+	private JLabel lblAddress_1;
+	private JLabel lblZip;
+	private JLabel lblCity_1;
+	private JLabel lblCountry_1;
+	private JLabel lblPhone_1;
+	private JLabel lblEmail_1;
+	private JLabel lblKids_1;
+	private JLabel lblPreviousDogs;
+	private JLabel lblOtherAnimals_1;
+	private JLabel lblAccommodation_1;
+	private JLabel lblGarden_1;
+	private JButton btnUpdateCustomer;
 
 	/**
 	 * Launch the application.
@@ -150,14 +182,15 @@ public class CustomerGui {
 		txtGarden.setBounds(150, 422, 133, 20);
 		frame.getContentPane().add(txtGarden);
 		
-		btnNewButton = new JButton("Create customer");
+		btnNewButton = new JButton("Create Customer");
 		btnNewButton.addActionListener(new java.awt.event.ActionListener()  {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				createCustomer(evt);
 			}
 		});
-		btnNewButton.setBounds(150, 528, 133, 50);
+		btnNewButton.setBounds(150, 468, 133, 50);
 		frame.getContentPane().add(btnNewButton);
+		
 		
 		txtSearch = new JTextField();
 		txtSearch.setText("Search");
@@ -166,57 +199,25 @@ public class CustomerGui {
 		txtSearch.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("Find customer");
-		btnNewButton_1.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				findCustomer(txtSearch.getText());
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				Customer cus = findCustomer(txtSearch.getText());
+				
+				
 			}
 		});
 		btnNewButton_1.setBounds(698, 22, 146, 20);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		lblFirstname = new JLabel("FirstName:");
-		lblFirstname.setBounds(510, 81, 157, 14);
-		frame.getContentPane().add(lblFirstname);
+		btnUpdateCustomer = new JButton("Update Customer");
+		btnUpdateCustomer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				
+			}
+		});
+		btnUpdateCustomer.setBounds(510, 468, 157, 50);
+		frame.getContentPane().add(btnUpdateCustomer);
 		
-		lblLastname = new JLabel("LastName:");
-		lblLastname.setBounds(510, 112, 157, 14);
-		frame.getContentPane().add(lblLastname);
-		
-		lblZipcode = new JLabel("Zipcode:");
-		lblZipcode.setBounds(510, 174, 105, 14);
-		frame.getContentPane().add(lblZipcode);
-		
-		lblCity = new JLabel("City:");
-		lblCity.setBounds(621, 174, 91, 14);
-		frame.getContentPane().add(lblCity);
-		
-		lblCountry = new JLabel("Country:");
-		lblCountry.setBounds(510, 205, 157, 14);
-		frame.getContentPane().add(lblCountry);
-		
-		lblPhone = new JLabel("Phone:");
-		lblPhone.setBounds(510, 236, 157, 14);
-		frame.getContentPane().add(lblPhone);
-		
-		lblEmail = new JLabel("Email:");
-		lblEmail.setBounds(510, 267, 157, 14);
-		frame.getContentPane().add(lblEmail);
-		
-		lblKids = new JLabel("Kids:");
-		lblKids.setBounds(510, 298, 157, 14);
-		frame.getContentPane().add(lblKids);
-		
-		lblOtherAnimals = new JLabel("Other animals");
-		lblOtherAnimals.setBounds(510, 360, 157, 14);
-		frame.getContentPane().add(lblOtherAnimals);
-		
-		lblAccommodation = new JLabel("Accommodation:");
-		lblAccommodation.setBounds(510, 391, 157, 14);
-		frame.getContentPane().add(lblAccommodation);
-		
-		lblGarden = new JLabel("Garden:");
-		lblGarden.setBounds(510, 422, 157, 14);
-		frame.getContentPane().add(lblGarden);
 		
 		btnNewButton_2 = new JButton("Delete Customer");
 		btnNewButton_2.setBounds(510, 528, 157, 50);
@@ -228,9 +229,6 @@ public class CustomerGui {
 		txtAddress.setBounds(150, 140, 133, 20);
 		frame.getContentPane().add(txtAddress);
 		
-		lblAddress = new JLabel("Address:");
-		lblAddress.setBounds(510, 143, 157, 14);
-		frame.getContentPane().add(lblAddress);
 		
 		txtPrevdogs = new JTextField();
 		txtPrevdogs.setText("PrevDogs");
@@ -238,9 +236,123 @@ public class CustomerGui {
 		txtPrevdogs.setBounds(150, 329, 133, 20);
 		frame.getContentPane().add(txtPrevdogs);
 		
-		lblPrevdog = new JLabel("PrevDog:");
-		lblPrevdog.setBounds(510, 332, 157, 14);
-		frame.getContentPane().add(lblPrevdog);
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(510, 78, 133, 20);
+		frame.getContentPane().add(textField);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(510, 109, 133, 20);
+		frame.getContentPane().add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(510, 174, 60, 20);
+		frame.getContentPane().add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(607, 174, 60, 20);
+		frame.getContentPane().add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(510, 205, 133, 20);
+		frame.getContentPane().add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(510, 236, 133, 20);
+		frame.getContentPane().add(textField_5);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		textField_6.setBounds(510, 267, 133, 20);
+		frame.getContentPane().add(textField_6);
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		textField_7.setBounds(510, 298, 133, 20);
+		frame.getContentPane().add(textField_7);
+		
+		textField_8 = new JTextField();
+		textField_8.setColumns(10);
+		textField_8.setBounds(510, 360, 133, 20);
+		frame.getContentPane().add(textField_8);
+		
+		textField_9 = new JTextField();
+		textField_9.setColumns(10);
+		textField_9.setBounds(510, 391, 133, 20);
+		frame.getContentPane().add(textField_9);
+		
+		textField_10 = new JTextField();
+		textField_10.setColumns(10);
+		textField_10.setBounds(510, 140, 133, 20);
+		frame.getContentPane().add(textField_10);
+		
+		textField_11 = new JTextField();
+		textField_11.setColumns(10);
+		textField_11.setBounds(510, 329, 133, 20);
+		frame.getContentPane().add(textField_11);
+		
+		textField_12 = new JTextField();
+		textField_12.setColumns(10);
+		textField_12.setBounds(510, 422, 133, 20);
+		frame.getContentPane().add(textField_12);
+		
+		JLabel lblFirstname_1 = new JLabel("Firstname");
+		lblFirstname_1.setBounds(446, 75, 54, 17);
+		frame.getContentPane().add(lblFirstname_1);
+		
+		lblLastname_1 = new JLabel("Lastname");
+		lblLastname_1.setBounds(446, 109, 72, 20);
+		frame.getContentPane().add(lblLastname_1);
+		
+		lblAddress_1 = new JLabel("Address");
+		lblAddress_1.setBounds(446, 140, 72, 20);
+		frame.getContentPane().add(lblAddress_1);
+		
+		lblZip = new JLabel("ZIP");
+		lblZip.setBounds(469, 174, 72, 20);
+		frame.getContentPane().add(lblZip);
+		
+		lblCity_1 = new JLabel("City");
+		lblCity_1.setBounds(580, 174, 72, 20);
+		frame.getContentPane().add(lblCity_1);
+		
+		lblCountry_1 = new JLabel("Country");
+		lblCountry_1.setBounds(446, 205, 72, 20);
+		frame.getContentPane().add(lblCountry_1);
+		
+		lblPhone_1 = new JLabel("Phone");
+		lblPhone_1.setBounds(446, 236, 72, 20);
+		frame.getContentPane().add(lblPhone_1);
+		
+		lblEmail_1 = new JLabel("Email");
+		lblEmail_1.setBounds(446, 267, 72, 20);
+		frame.getContentPane().add(lblEmail_1);
+		
+		lblKids_1 = new JLabel("Kids");
+		lblKids_1.setBounds(446, 298, 72, 20);
+		frame.getContentPane().add(lblKids_1);
+		
+		lblPreviousDogs = new JLabel("Previous Dogs");
+		lblPreviousDogs.setBounds(432, 329, 72, 20);
+		frame.getContentPane().add(lblPreviousDogs);
+		
+		lblOtherAnimals_1 = new JLabel("Other Animals");
+		lblOtherAnimals_1.setBounds(432, 360, 72, 20);
+		frame.getContentPane().add(lblOtherAnimals_1);
+		
+		lblAccommodation_1 = new JLabel("Accommodation");
+		lblAccommodation_1.setBounds(428, 391, 90, 20);
+		frame.getContentPane().add(lblAccommodation_1);
+		
+		lblGarden_1 = new JLabel("Garden");
+		lblGarden_1.setBounds(432, 422, 72, 20);
+		frame.getContentPane().add(lblGarden_1);
+		
 		
 	}
 	
@@ -271,8 +383,9 @@ public class CustomerGui {
 		}
 	}
 	
-	public static void findCustomer(String phone){
+	public static Customer findCustomer(String phone){
 		CustomerCTRL ctrlCus = new CustomerCTRL();
-		ctrlCus.findCustomer(phone);
+		Customer cus = ctrlCus.findCustomer(phone);
+		return cus;	
 	}
 }
