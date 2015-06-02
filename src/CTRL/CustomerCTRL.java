@@ -8,7 +8,7 @@ public class CustomerCTRL {
 	
 	public Customer findCustomer(String phone){
 		dbCustomer dbCus = new dbCustomer();
-		Customer cus =dbCus.getByPhone(phone);
+		Customer cus = dbCus.getByPhone(phone);
 		return cus;
 	}
 		
@@ -20,8 +20,12 @@ public class CustomerCTRL {
 				previousDogs, ref,   eanNumber,  gardenDescription, kids, animals, accommodation) ;
 	}
 	
-	public void updateCustomer(int id){
-
+	public void updateCustomer(String firstName, String lastName, String phone, String email, String country, String city, String zipCode, String address, 
+			String previousDogs, String ref, String eanNumber, String gardenDescription, String kids, String animals, String accommodation, int id) throws Exception{
+		
+		dbCustomer dbCus = new dbCustomer();
+		dbCus.updateCustomer(firstName,  lastName, phone,  email, country, city, zipCode, address, 
+				previousDogs, ref, eanNumber,  gardenDescription, kids, animals, accommodation, id);
 	}
 	
 	

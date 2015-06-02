@@ -36,19 +36,19 @@ public class CustomerGui {
 	private static JButton btnUpdateButton;
 	private static JTextField txtSearch;
 
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
+	private static JTextField textField;
+	private static JTextField textField_1;
+	private static JTextField textField_2;
+	private static JTextField textField_3;
+	private static JTextField textField_4;
+	private static JTextField textField_5;
+	private static JTextField textField_6;
+	private static JTextField textField_7;
+	private static JTextField textField_8;
+	private static JTextField textField_9;
+	private static JTextField textField_10;
+	private static JTextField textField_11;
+	private static JTextField textField_12;
 	private JLabel lblLastname_1;
 	private JLabel lblAddress_1;
 	private JLabel lblZip;
@@ -62,6 +62,7 @@ public class CustomerGui {
 	private JLabel lblAccommodation_1;
 	private JLabel lblGarden_1;
 	private JButton btnUpdateCustomer;
+	private static JTextField hiddenTextField;
 
 	/**
 	 * Launch the application.
@@ -191,6 +192,8 @@ public class CustomerGui {
 				
 				Customer cus = findCustomer(txtSearch.getText());
 				
+				hiddenTextField.setText(String.valueOf(cus.getID()));
+				
 				textField.setText(cus.getFirstName());
 				textField_1.setText(cus.getLastName());
 				textField_2.setText(cus.getAddress());
@@ -215,7 +218,7 @@ public class CustomerGui {
 		btnUpdateCustomer = new JButton("Update Customer");
 		btnUpdateCustomer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
-				
+				updateCustomer(evt);
 			}
 		});
 		btnUpdateCustomer.setBounds(510, 468, 157, 50);
@@ -356,6 +359,11 @@ public class CustomerGui {
 		lblGarden_1.setBounds(432, 422, 72, 20);
 		frame.getContentPane().add(lblGarden_1);
 		
+		hiddenTextField = new JTextField();
+		hiddenTextField.setBounds(575, 50, 25, 20);
+		frame.getContentPane().add(hiddenTextField);
+		hiddenTextField.setColumns(10);
+		
 		
 	}
 	
@@ -380,6 +388,36 @@ public class CustomerGui {
 		String accommodation = "accommodation";
 		try{
 			cusCtrl.createCustomer(firstname, lastname, phone, email, country, city, zipCode, address, prevDogs, ref, eanNumber, gardenDescr, kids, animals, accommodation);
+		}
+		catch(Exception evt){
+			evt.printStackTrace();
+		}
+	}
+	
+	public static void updateCustomer(ActionEvent e){
+		CustomerCTRL cusCtrl = new CustomerCTRL();
+	    
+		int id = Integer.parseInt(hiddenTextField.getText());
+		
+		String firstname = textField.getText();
+		String lastname = textField_1.getText();
+		String phone = textField_2.getText();
+		String email = textField_3.getText();
+		String country = textField_4.getText();
+		String city = textField_5.getText();
+		String zipCode = textField_6.getText();
+		String address = textField_7.getText();
+		String prevDogs = textField_8.getText();
+		String ref = "ref";
+		String eanNumber = "eanNumber";
+		String gardenDescr = textField_11.getText();
+		String kids = "kids";
+		String animals = textField_12.getText();
+		String accommodation = "accommodation";
+		
+		
+		try{
+			cusCtrl.updateCustomer(firstname, lastname, phone, email, country, city, zipCode, address, prevDogs, ref, eanNumber, gardenDescr, kids, animals, accommodation, id);
 		}
 		catch(Exception evt){
 			evt.printStackTrace();

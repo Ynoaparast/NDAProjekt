@@ -17,6 +17,7 @@ public class dbCustomer {
 	public Customer getByPhone(String phone){
 		
 		Customer cusObj = new Customer();
+		
 		try{
 			String query = "Select top 1 * from customer where phone ='"+ phone + "'order by ID desc";
 			
@@ -76,17 +77,44 @@ public class dbCustomer {
 	
 	       System.out.println("insert : " + query);
 	       
-	      try{ // insert new employee +  dependent
+	      try{ 
 	          Statement stmt = con.createStatement();
 	          stmt.setQueryTimeout(5);
 	     	  stmt.executeUpdate(query);
 	          stmt.close();
 	      }//end try
 	       catch(SQLException ex){
-	          System.out.println("Employee ikke oprettet");
-	          throw new Exception ("Employee is not inserted correct");
+	          System.out.println("Customer ikke oprettet");
+	          throw new Exception ("Customer is not inserted correct");
 	       }
 	     }
+	
+	
+	public void updateCustomer(String firstName, String lastName, String phone, String email, String country, String city, String zipCode, String address, 
+			String previousDogs, String ref, String eanNumber, String gardenDescription, String kids, String animals, String accommodation, int id) throws Exception
+	 {
+		   
+		
+		String query= "UPDATE Customer SET firstName =" + firstName + "," + "lastName =" + lastName + "," + "phone ="+ phone + "," + "email ="+ email + "," + "country =" + country
+				+ "," + "city =" + city + "," + "zipCode ="+ zipCode+ "," + "address =" + address + "," + "previousDogs =" + previousDogs + "," + "ref =" + ref+ "," + "eanNumber ="+ eanNumber 
+				+ "," + "gardenDescription =" + gardenDescription + "," + "kids =" + kids + "," + "animals =" + animals + "," + "accommodation =" + accommodation + "WHERE ID =" + id;
+ 		
+	            
+	
+	       System.out.println("insert : " + query);
+	       
+	      try{ 
+	          Statement stmt = con.createStatement();
+	          stmt.setQueryTimeout(5);
+	     	  stmt.executeUpdate(query);
+	          stmt.close();
+	      }
+	       catch(SQLException ex){
+	          System.out.println("Customer is not updated");
+	          throw new Exception ("Customer is not updated");
+	       }
+	     }
+
 
 	
 }

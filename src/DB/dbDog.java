@@ -28,21 +28,21 @@ public void insertDog(String name, String age, String gender, String race, Strin
 			maturity + "','"  +
 			heat + "','" +
 			pseudopregnancy + "','" +
-			castrated+ "','" +
+			castrated + "','" +
 			relatives + "','" +
 			arrival + "','" +
-			previousHomes + "','"+
+			previousHomes + "','" +
 			CustomerID + "')";
 	
 	
 	System.out.println("insert : " + query);
     
-    try{ // insert new employee + dependent
+    try{ 
         Statement stmt = con.createStatement();
         stmt.setQueryTimeout(5);
    	  	stmt.executeUpdate(query);
         stmt.close();
-    }//end try
+    }
      catch(SQLException ex){
         System.out.println("Dog ikke oprettet");
         throw new Exception ("Dog is not inserted correct");
