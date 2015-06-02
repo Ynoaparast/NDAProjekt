@@ -1,30 +1,24 @@
 package Model;
 
 public class Customer {
-<<<<<<< HEAD
 
 	private int ID;
-=======
-	
->>>>>>> origin/master
+
 	private String firstName, lastName, phone, email, country, city, zipCode, address,
 	previousDogs, ref, eanNumber, gardenDescription, kids, animals, accommodation;
 	
 	public Customer(){
 		
 	}
-	
-<<<<<<< HEAD
+
 	public int getID() {
 		return ID;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public void setID(int id) {
+		ID = id;
 	}
 
-=======
->>>>>>> origin/master
 	public String getFirstName() {
 		return firstName;
 	}

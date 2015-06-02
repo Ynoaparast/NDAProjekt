@@ -20,7 +20,5 @@ public class CustomerCTRL {
 	
 	public void updateCustomer(){
 		
-	}
-	}
-	
+	}	
 }
