@@ -1,10 +1,7 @@
 package Model;
 
 public class Customer {
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 
 	private int ID;
 
@@ -14,10 +11,7 @@ public class Customer {
 	public Customer(){
 		
 	}
-<<<<<<< HEAD
-	
-=======
->>>>>>> origin/master
+
 
 	public int getID() {
 		return ID;
