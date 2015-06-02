@@ -15,10 +15,11 @@ public class dbCustomer {
 	}
 	
 	public Customer getByPhone(String phone){
+		
 		Customer cusObj = new Customer();
 		try{
 			String query = "Select top 1 * from customer where phone ='"+ phone + "'order by ID desc";
-			Connection con = dbConnection.getInstance().getDBcon();
+			
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 			

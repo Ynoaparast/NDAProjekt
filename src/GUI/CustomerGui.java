@@ -35,20 +35,7 @@ public class CustomerGui {
 	private static JButton btnNewButton_2;
 	private static JButton btnUpdateButton;
 	private static JTextField txtSearch;
-	private static JLabel lblFirstname;
-	private static JLabel lblLastname;
-	private static JLabel lblZipcode;
-	private static JLabel lblCity;
-	private static JLabel lblCountry;
-	private static JLabel lblPhone;
-	private static JLabel lblEmail;
-	private static JLabel lblKids;
-	private static JLabel lblOtherAnimals;
-	private static JLabel lblAccommodation;
-	private static JLabel lblGarden;
-	
-	private static JLabel lblAddress;
-	private static JLabel lblPrevdog;
+
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -201,7 +188,23 @@ public class CustomerGui {
 		JButton btnNewButton_1 = new JButton("Find customer");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
+				
 				Customer cus = findCustomer(txtSearch.getText());
+				
+				textField.setText(cus.getFirstName());
+				textField_1.setText(cus.getLastName());
+				textField_2.setText(cus.getAddress());
+				textField_3.setText(cus.getZipCode());
+				textField_4.setText(cus.getCity());
+				textField_5.setText(cus.getCountry());
+				textField_6.setText(cus.getPhone());
+				textField_7.setText(cus.getEmail());
+				textField_8.setText(cus.getKids());
+				textField_9.setText(cus.getPreviousDogs());
+				textField_10.setText(cus.getAnimals());
+				textField_11.setText(cus.getAccommodation());
+				textField_12.setText(cus.getGardenDescription());
+				
 				
 				
 			}
@@ -356,7 +359,7 @@ public class CustomerGui {
 		
 	}
 	
-	public static void createCustomer(java.awt.event.ActionEvent e){
+	public static void createCustomer(ActionEvent e){
 		
 		CustomerCTRL cusCtrl = new CustomerCTRL();
 		
