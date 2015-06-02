@@ -7,31 +7,35 @@ import javax.swing.JTextField;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import javax.swing.JButton;
 
 import CTRL.CustomerCTRL;
+import CTRL.DogCTRL;
+import DB.dbConnection;
 import Model.Customer;
 
 public class DogGUI {
 
 	private JFrame frame;
-	private JTextField txtName;
-	private JTextField txtAge;
-	private JTextField txtGender;
-	private JTextField txtRace;
-	private JTextField txtVet;
-	private JTextField txtInjuries;
-	private JTextField txtIllness;
-	private JTextField txtMaturity;
-	private JTextField txtHeat;
-	private JTextField txtPseudopregnancy;
-	private JTextField txtCastrated;
-	private JTextField txtRelatives;
-	private JTextField txtArrival;
-	private JTextField txtPrevioushomes;
-	private JButton btnCreateDog;
-	private JTextField txtOwnerphone;
+	private static JTextField txtName;
+	private static JTextField txtAge;
+	private static JTextField txtGender;
+	private static JTextField txtRace;
+	private static JTextField txtVet;
+	private static JTextField txtInjuries;
+	private static JTextField txtIllness;
+	private static JTextField txtMaturity;
+	private static JTextField txtHeat;
+	private static JTextField txtPseudopregnancy;
+	private static JTextField txtCastrated;
+	private static JTextField txtRelatives;
+	private static JTextField txtArrival;
+	private static JTextField txtPrevioushomes;
+	private static JButton btnCreateDog;
+	private static JTextField txtOwnerphone;
 
 	/**
 	 * Launch the application.
@@ -156,23 +160,23 @@ public class DogGUI {
 		txtOwnerphone.setColumns(10);
 		
 		btnCreateDog = new JButton("Create Dog");
-		btnCreateDog.addActionListener(new java.awt.event.ActionListener()  {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				
-				CustomerCTRL cusCTRL = new CustomerCTRL();
-				Customer c =cusCTRL.findCustomer(txtOwnerphone.getText());
-							
-				
-				CreateDog(evt, c.getID());
+		btnCreateDog.addActionListener(new ActionListener()  {
+			public void actionPerformed(ActionEvent evt) {		
+				CreateDog(evt);
 			}
+
 		});
 		btnCreateDog.setBounds(40, 480, 200, 50);
 		frame.getContentPane().add(btnCreateDog);
 		
 		
 	}
-
-	protected void CreateDog(java.awt.event.ActionEvent e) {
+	protected void CreateDog(ActionEvent evt) {
+		
+		CustomerCTRL cusCTRL = new CustomerCTRL();
+		Customer c = cusCTRL.findCustomer(txtOwnerphone.getText());
+		int id = c.getID();
+		
 		
 		DogCTRL DCtrl = new DogCTRL();
 		String name = txtName.getText();
@@ -189,11 +193,11 @@ public class DogGUI {
 		String relatives = txtRelatives.getText();
 		String arrival = txtArrival.getText();
 		String previousHomes = txtPrevioushomes.getText();
-		int CustomerID = txtOwnerphone.getText();
+		int CustomerID = 49;
 		try{
-			
-		}catch(Exception evt){
-			evt.printStackTrace();
+			DCtrl.CreateDog(name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID);
+		}catch(Exception e){
+			e.printStackTrace();
 		}
 		
 	}

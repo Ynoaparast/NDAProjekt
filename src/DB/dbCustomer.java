@@ -52,7 +52,7 @@ public class dbCustomer {
 	}
 	
 	public void insertCustomer(String firstName, String lastName, String phone, String email, String country, String city, String zipCode, String address, 
-			String previousDogs, String  ref, String  eanNumber, String  gardenDescription, String  kids, String  animals, String  accommodation) throws Exception
+			String previousDogs, String ref, String eanNumber, String gardenDescription, String kids, String animals, String accommodation) throws Exception
 	 {
 		   
 		

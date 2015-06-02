@@ -21,7 +21,6 @@ public class CustomerCTRL {
 	}
 	
 	public void updateCustomer(int id){
-		
 
 	}
 	
