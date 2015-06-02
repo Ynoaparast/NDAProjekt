@@ -1,14 +1,22 @@
 package CTRL;
-
 import DB.dbDog;
+import Model.Dog;
 
 public class DogCTRL {
 
-	public void CreateDog(String name, String age, String gender, String race, String vet, String injuries, String illness, 
-			String maturity, String heat, String pseudopregnancy, String castrated, String relatives, String arrival, String previousHomes, int CustomerID)throws Exception{
+//	public void CreateDog(String name, String age, String gender, String race, String vet, String injuries, String illness, 
+//			String maturity, String heat, String psudopregnancy, String castrated, String relatives, String arrival, String previousHomes, int CustomerID)throws Exception{
+//		
+//		dbDog dbD = new dbDog();
+//		dbD.insertDog(name, age, gender, race, vet, injuries, illness, maturity, heat, psudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID);
+//	
+//	}
+//	
+	public void CreateDog(Dog d)throws Exception{
 		
 		dbDog dbD = new dbDog();
-		dbD.insertDog(name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID);
+		dbD.insertDog(d);
+	
 	}
 	
 }

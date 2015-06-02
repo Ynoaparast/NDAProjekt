@@ -3,7 +3,7 @@ package Model;
 public class Dog {
 	
 	
-	private String name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes;
+	private String name, age, gender, race, vet, injuries, illness, maturity, heat, psudopregnancy, castrated, relatives, arrival, previousHomes;
 	private int CustomerID;
 	
 	public Dog(){
@@ -82,12 +82,12 @@ public class Dog {
 		this.heat = heat;
 	}
 
-	public String getPseudopregnancy() {
-		return pseudopregnancy;
+	public String getPsudopregnancy() {
+		return psudopregnancy;
 	}
 
-	public void setPseudopregnancy(String pseudopregnancy) {
-		this.pseudopregnancy = pseudopregnancy;
+	public void setPsudopregnancy(String psudopregnancy) {
+		this.psudopregnancy = psudopregnancy;
 	}
 
 	public String getCastrated() {

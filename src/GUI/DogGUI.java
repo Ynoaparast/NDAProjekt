@@ -1,21 +1,17 @@
 package GUI;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.Connection;
-
-import javax.swing.JButton;
-
 import CTRL.CustomerCTRL;
 import CTRL.DogCTRL;
-import DB.dbConnection;
 import Model.Customer;
+import Model.Dog;
 
 public class DogGUI {
 
@@ -29,7 +25,7 @@ public class DogGUI {
 	private static JTextField txtIllness;
 	private static JTextField txtMaturity;
 	private static JTextField txtHeat;
-	private static JTextField txtPseudopregnancy;
+	private static JTextField txtPsudopregnancy;
 	private static JTextField txtCastrated;
 	private static JTextField txtRelatives;
 	private static JTextField txtArrival;
@@ -123,11 +119,11 @@ public class DogGUI {
 		frame.getContentPane().add(txtHeat);
 		txtHeat.setColumns(10);
 		
-		txtPseudopregnancy = new JTextField();
-		txtPseudopregnancy.setText("Pseudopregnancy");
-		txtPseudopregnancy.setBounds(40, 310, 107, 20);
-		frame.getContentPane().add(txtPseudopregnancy);
-		txtPseudopregnancy.setColumns(10);
+		txtPsudopregnancy = new JTextField();
+		txtPsudopregnancy.setText("Pseudopregnancy");
+		txtPsudopregnancy.setBounds(40, 310, 107, 20);
+		frame.getContentPane().add(txtPsudopregnancy);
+		txtPsudopregnancy.setColumns(10);
 		
 		txtCastrated = new JTextField();
 		txtCastrated.setText("Castrated");
@@ -171,32 +167,63 @@ public class DogGUI {
 		
 		
 	}
-	protected void CreateDog(ActionEvent evt) {
+//	protected void CreateDog(ActionEvent evt) {
+//		
+//		CustomerCTRL cusCTRL = new CustomerCTRL();
+//		Customer c = cusCTRL.findCustomer(txtOwnerphone.getText());
+//		int id = c.getID();
+//		
+//		DogCTRL DCtrl = new DogCTRL();
+//		
+//		String name = txtName.getText();
+//		String age = txtAge.getText();
+//		String gender = txtGender.getText(); 
+//		String race = txtRace.getText(); 
+//		String vet = txtVet.getText(); 
+//		String injuries = txtInjuries.getText(); 
+//		String illness = txtIllness.getText(); 
+//		String maturity = txtMaturity.getText(); 
+//		String heat = txtHeat.getText(); 
+//		String psudopregnancy = txtPsudopregnancy.getText();
+//		String castrated = txtCastrated.getText(); 
+//		String relatives = txtRelatives.getText();
+//		String arrival = txtArrival.getText();
+//		String previousHomes = txtPrevioushomes.getText();
+//		int CustomerID = id;
+//		try{
+//			DCtrl.CreateDog(name, age, gender, race, vet, injuries, illness, maturity, heat, psudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID);
+//		}catch(Exception e){
+//			e.printStackTrace();
+//		}
+//		
+//	}
+	
+protected void CreateDog(ActionEvent evt) {
 		
 		CustomerCTRL cusCTRL = new CustomerCTRL();
 		Customer c = cusCTRL.findCustomer(txtOwnerphone.getText());
 		int id = c.getID();
-		
+		Dog d = new Dog();
 		
 		DogCTRL DCtrl = new DogCTRL();
 		
-		String name = txtName.getText();
-		String age = txtAge.getText();
-		String gender = txtGender.getText(); 
-		String race = txtRace.getText(); 
-		String vet = txtVet.getText(); 
-		String injuries = txtInjuries.getText(); 
-		String illness = txtIllness.getText(); 
-		String maturity = txtMaturity.getText(); 
-		String heat = txtHeat.getText(); 
-		String pseudopregnancy = txtPseudopregnancy.getText();
-		String castrated = txtCastrated.getText(); 
-		String relatives = txtRelatives.getText();
-		String arrival = txtArrival.getText();
-		String previousHomes = txtPrevioushomes.getText();
-		int CustomerID = id;
+		 d.setName(txtName.getText());
+		 d.setAge(txtAge.getText());
+		 d.setGender(txtGender.getText()); 
+		 d.setRace(txtRace.getText()); 
+		 d.setVet(txtVet.getText()); 
+		 d.setInjuries(txtInjuries.getText()); 
+		 d.setIllness(txtIllness.getText()); 
+		 d.setMaturity(txtMaturity.getText()); 
+		 d.setHeat(txtHeat.getText()); 
+		 d.setPsudopregnancy(txtPsudopregnancy.getText());
+		 d.setCastrated(txtCastrated.getText()); 
+		 d.setRelatives(txtRelatives.getText());
+		 d.setArrival(txtArrival.getText());
+		 d.setPreviousHomes(txtPrevioushomes.getText());
+		 d.setCustomerID(id);
 		try{
-			DCtrl.CreateDog(name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID);
+			DCtrl.CreateDog(d);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

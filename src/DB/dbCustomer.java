@@ -43,8 +43,8 @@ public class dbCustomer {
 			cusObj.setAnimals(rs.getString("animals"));
 			cusObj.setAccommodation(rs.getString("accommodation"));
 			
-			con.close();
-			stmt.close();	
+			//con.close();
+			//stmt.close();	
 		}
 		catch(Exception e){
 			e.printStackTrace();
