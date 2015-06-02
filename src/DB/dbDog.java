@@ -43,9 +43,10 @@ public void insertDog(String name, String age, String gender, String race, Strin
    	  	stmt.executeUpdate(query);
         stmt.close();
     }//end try
-     catch(SQLException ex){
+     catch(Exception e){
         System.out.println("Dog ikke oprettet");
-        throw new Exception ("Dog is not inserted correct");
+        e.printStackTrace();
+       // throw new Exception ("Dog is not inserted correct");
      }
 	
 }

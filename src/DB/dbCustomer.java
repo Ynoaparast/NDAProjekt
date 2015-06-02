@@ -81,7 +81,7 @@ public class dbCustomer {
 	     	  stmt.executeUpdate(query);
 	          stmt.close();
 	      }//end try
-	       catch(SQLException ex){
+	       catch(Exception e){
 	          System.out.println("Employee ikke oprettet");
 	          throw new Exception ("Employee is not inserted correct");
 	       }

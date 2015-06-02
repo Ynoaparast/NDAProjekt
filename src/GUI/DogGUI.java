@@ -177,7 +177,6 @@ public class DogGUI {
 		Customer c = cusCTRL.findCustomer(txtOwnerphone.getText());
 		int id = c.getID();
 		
-		
 		DogCTRL DCtrl = new DogCTRL();
 		String name = txtName.getText();
 		String age = txtAge.getText();
@@ -193,7 +192,7 @@ public class DogGUI {
 		String relatives = txtRelatives.getText();
 		String arrival = txtArrival.getText();
 		String previousHomes = txtPrevioushomes.getText();
-		int CustomerID = 49;
+		int CustomerID = id;
 		try{
 			DCtrl.CreateDog(name, age, gender, race, vet, injuries, illness, maturity, heat, pseudopregnancy, castrated, relatives, arrival, previousHomes, CustomerID);
 		}catch(Exception e){

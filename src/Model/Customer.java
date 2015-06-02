@@ -3,141 +3,143 @@ package Model;
 public class Customer {
 
 
-	private int ID;
+	private static int ID;
 
-	private String firstName, lastName, phone, email, country, city, zipCode, address,
+	private static String firstName, lastName, phone, email, country, city, zipCode, address,
 	previousDogs, ref, eanNumber, gardenDescription, kids, animals, accommodation;
 	
 	public Customer(){
 		
 	}
 
-
-	public int getID() {
+	public static int getID() {
 		return ID;
 	}
 
-	public void setID(int id) {
-		ID = id;
+	public static void setID(int iD) {
+		ID = iD;
 	}
 
-	public String getFirstName() {
+	public static String getFirstName() {
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public static void setFirstName(String firstName) {
+		Customer.firstName = firstName;
 	}
 
-	public String getLastName() {
+	public static String getLastName() {
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public static void setLastName(String lastName) {
+		Customer.lastName = lastName;
 	}
 
-	public String getPhone() {
+	public static String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public static void setPhone(String phone) {
+		Customer.phone = phone;
 	}
 
-	public String getEmail() {
+	public static String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public static void setEmail(String email) {
+		Customer.email = email;
 	}
 
-	public String getCountry() {
+	public static String getCountry() {
 		return country;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
+	public static void setCountry(String country) {
+		Customer.country = country;
 	}
 
-	public String getCity() {
+	public static String getCity() {
 		return city;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public static void setCity(String city) {
+		Customer.city = city;
 	}
 
-	public String getZipCode() {
+	public static String getZipCode() {
 		return zipCode;
 	}
 
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
+	public static void setZipCode(String zipCode) {
+		Customer.zipCode = zipCode;
 	}
 
-	public String getAddress() {
+	public static String getAddress() {
 		return address;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public static void setAddress(String address) {
+		Customer.address = address;
 	}
 
-	public String getPreviousDogs() {
+	public static String getPreviousDogs() {
 		return previousDogs;
 	}
 
-	public void setPreviousDogs(String previousDogs) {
-		this.previousDogs = previousDogs;
+	public static void setPreviousDogs(String previousDogs) {
+		Customer.previousDogs = previousDogs;
 	}
 
-	public String getRef() {
+	public static String getRef() {
 		return ref;
 	}
 
-	public void setRef(String ref) {
-		this.ref = ref;
+	public static void setRef(String ref) {
+		Customer.ref = ref;
 	}
 
-	public String getEanNumber() {
+	public static String getEanNumber() {
 		return eanNumber;
 	}
 
-	public void setEanNumber(String eanNumber) {
-		this.eanNumber = eanNumber;
+	public static void setEanNumber(String eanNumber) {
+		Customer.eanNumber = eanNumber;
 	}
 
-	public String getGardenDescription() {
+	public static String getGardenDescription() {
 		return gardenDescription;
 	}
 
-	public void setGardenDescription(String gardenDescription) {
-		this.gardenDescription = gardenDescription;
+	public static void setGardenDescription(String gardenDescription) {
+		Customer.gardenDescription = gardenDescription;
 	}
 
-	public String getKids() {
+	public static String getKids() {
 		return kids;
 	}
 
-	public void setKids(String kids) {
-		this.kids = kids;
+	public static void setKids(String kids) {
+		Customer.kids = kids;
 	}
 
-	public String getAnimals() {
+	public static String getAnimals() {
 		return animals;
 	}
 
-	public void setAnimals(String animals) {
-		this.animals = animals;
+	public static void setAnimals(String animals) {
+		Customer.animals = animals;
 	}
 
-	public String getAccommodation() {
+	public static String getAccommodation() {
 		return accommodation;
 	}
 
-	public void setAccommodation(String accommodation) {
-		this.accommodation = accommodation;
-	}	
+	public static void setAccommodation(String accommodation) {
+		Customer.accommodation = accommodation;
+	}
+
+
+	
 }
